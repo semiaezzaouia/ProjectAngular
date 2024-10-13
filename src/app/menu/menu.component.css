@@ -1,0 +1,30 @@
+.divider {
+    border: none;
+    border-top: 2px solid white;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.custom-bg {
+    background-color: #CCD1FF;
+}
+
+.logo-container {
+    padding: 20px;
+}
+
+.company-logo {
+    max-width: 100%; /* S'adapte à la taille de la sidebar */
+    height: auto;    /* Garde les proportions de l'image */
+    display: block;
+    margin: 0 auto;  /* Centre l'image */
+}
+
+.nav-link {
+    color: black !important; /* Couleur du texte par défaut en noir */
+    font-weight: 300 !important;
+}
+
+.dashboard-text {
+    font-size: 20px !important; 
+}
