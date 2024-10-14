@@ -21,7 +21,7 @@ export class LoginComponent {
     this.authService.login(credentials).subscribe(
       (response) => {
         this.authService.saveToken(response.token);  // Sauvegarder le token
-        this.router.navigate(['/home']);  // Rediriger vers la page d'accueil
+        this.router.navigate(['/generaldashboard']);  // Rediriger vers la page 1
       },
       (error) => {
         console.error('Erreur de connexion', error);

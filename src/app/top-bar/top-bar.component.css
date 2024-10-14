@@ -1,0 +1,13 @@
+.custom-disconnect-btn {
+  background-color: #DBDFFF; /* Couleur de fond personnalisée */
+  color: black; /* Couleur du texte */
+  border: none; /* Supprime la bordure par défaut */
+  font-size: 18px; /* Agrandit le texte du bouton */
+  padding: 12px 24px;
+}
+
+.custom-disconnect-btn:hover {
+  background-color: #596AFF; /* Couleur de fond au survol */
+  color: white; /* Couleur du texte au survol */
+}
+
