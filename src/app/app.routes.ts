@@ -3,6 +3,7 @@ import { Home2Component } from './home2/home2.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import {RegisterComponent} from './register/register.component';
+import {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
 
 
 export const routes: Routes = [
@@ -10,6 +11,7 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent},
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent }, // Assurez-vous que le composant de connexion est également défini
+    { path: 'forgot', component: ForgotPasswordComponent },
     { path: '', redirectTo: 'login', pathMatch: 'full' },  // Redirige vers login par défaut
     { path: '**', redirectTo: 'login' },  // Gestion des routes inconnues
 

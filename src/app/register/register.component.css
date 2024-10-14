@@ -1,0 +1,11 @@
+.custom-gradient-bg {
+  background: linear-gradient(135deg, #CCD1FF, #B0C4FF, #E6E8FF);}
+
+.custom-bg {
+  background-color: #596AFF;
+}
+
+.image-spacing {
+  margin-top: 40px;
+  margin-left: 25px;
+}
