@@ -6,11 +6,13 @@
 }
 
 .custom-bg {
-    background-color: #CCD1FF;
+    background-color: #DBDFFF;
 }
 
 .logo-container {
     padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .company-logo {
@@ -20,11 +22,56 @@
     margin: 0 auto;  /* Centre l'image */
 }
 
-.nav-link {
-    color: black !important; /* Couleur du texte par défaut en noir */
+/*.nav-link {
+    color: black !important;
     font-weight: 300 !important;
+}*/
+
+.custom-dashboard-btn{
+  font-size: 18px !important;
+  outline: none;
+  box-shadow: none;
 }
 
-.dashboard-text {
-    font-size: 20px !important; 
+/* Style par défaut pour les éléments de la sidebar */
+.nav-item a.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  color: black; /* Couleur par défaut du texte */
+  text-decoration: none;
+  background-color: #DBDFFF; /* Couleur de fond par défaut */
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s; /* Transition fluide */
 }
+
+/* Style au survol (hover) pour les éléments non actifs */
+.nav-item:not(.active) a.nav-link:hover {
+  background-color: #CCD1FF; /* Couleur de fond au hover pour les éléments non actifs */
+  color: black; /* Couleur du texte au hover pour les éléments non actifs */
+}
+
+/* Style pour l'élément actif */
+.nav-item.active a.nav-link {
+  background-color: #596AFF; /* Couleur de fond pour l'élément actif */
+  color: white !important; /* Couleur du texte pour l'élément actif */
+}
+
+/* Garde le texte blanc lorsque l'élément actif est survolé */
+.nav-item.active a.nav-link:hover {
+  background-color: #596AFF; /* Conserver la même couleur de fond */
+  color: white !important; /* Conserver le texte blanc */
+}
+
+/* Applique le style de l'élément actif à la classe personnalisée */
+.nav-item.active .custom-dashboard-btn {
+  background-color: #596AFF; /* Couleur de fond pour l'élément actif */
+  color: white !important; /* Couleur du texte pour l'élément actif */
+}
+.custom-dashboard-btn:focus {
+  outline: none; /* Supprime la bordure de focus */
+  /* Ajoutez un style alternatif si nécessaire */
+  background-color: #A0A0FF; /* Exemple de changement de couleur */
+  box-shadow: none;
+}
+
