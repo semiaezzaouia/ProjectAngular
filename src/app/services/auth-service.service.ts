@@ -36,6 +36,10 @@ export class AuthServiceService {
 
   // Check if the user is authenticated
   isAuthenticated(): boolean { return !!localStorage.getItem(this.tokenKey); }
-  // Method for logout
-  logout() { localStorage.removeItem(this.tokenKey); this.router.navigate(['/login']); }
+   //Method for logout
+  logout() { localStorage.removeItem(this.tokenKey);
+    this.router.navigate(['/login']); }
+
+
+
 }

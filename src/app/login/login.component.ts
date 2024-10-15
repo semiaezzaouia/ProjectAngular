@@ -25,6 +25,7 @@ export class LoginComponent {
       },
       (error) => {
         console.error('Erreur de connexion', error);
+        alert('Erreur de connexion : ' + error.message || 'Veuillez vérifier vos identifiants.');
       }
     );
   }
