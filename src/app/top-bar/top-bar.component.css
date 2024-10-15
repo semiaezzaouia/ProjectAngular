@@ -3,7 +3,7 @@
   color: black; /* Couleur du texte */
   border: none; /* Supprime la bordure par défaut */
   font-size: 18px; /* Agrandit le texte du bouton */
-  padding: 12px 24px;
+  padding: 10px 24px;
 }
 
 .custom-disconnect-btn:hover {

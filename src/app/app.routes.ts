@@ -7,6 +7,7 @@ import {ForgotPasswordComponent} from './forgot-password/forgot-password.compone
 import {MenuComponent} from './menu/menu.component';
 import {TopBarComponent} from './top-bar/top-bar.component';
 import {GeneralDashboardComponent} from './general-dashboard/general-dashboard.component';
+import {FiltredDashboardComponent} from './filtred-dashboard/filtred-dashboard.component';
 
 
 export const routes: Routes = [
@@ -15,6 +16,7 @@ export const routes: Routes = [
     { path: 'topbar', component: TopBarComponent},
     { path: 'menu', component: MenuComponent},
     { path: 'generaldashboard', component: GeneralDashboardComponent},
+    { path: 'filtreddashboard', component: FiltredDashboardComponent},
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent }, // Assurez-vous que le composant de connexion est également défini
     { path: 'forgot', component: ForgotPasswordComponent },
