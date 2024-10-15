@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 
@@ -39,6 +39,17 @@ export class AuthServiceService {
    //Method for logout
   logout() { localStorage.removeItem(this.tokenKey);
     this.router.navigate(['/login']); }
+
+
+// Method to get authenticated user
+  getAuthenticatedUser(): Observable<any> {
+    const token = localStorage.getItem('authToken'); // Retrieve the JWT token from local storage
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}` // Include the JWT token in the Authorization header
+    });
+
+    return this.http.get(`${this.apiUrl}/me`, { headers });
+  }
 
 
 

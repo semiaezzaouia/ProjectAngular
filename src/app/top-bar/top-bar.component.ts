@@ -9,8 +9,17 @@ import {AuthServiceService} from '../services/auth-service.service';
   styleUrl: './top-bar.component.css'
 })
 export class TopBarComponent {
+  user:any;
   constructor(private authService: AuthServiceService) {}
-  logout() {
+
+  ngOnInit(): void{ this.authService.getAuthenticatedUser().subscribe( (data) =>{ this.user= data;
+    console.log('données user: ',data);
+    }, (error) =>
+  { console.error('Failed to fetch user data', error); } ); }
+
+    logout() {
     this.authService.logout();
   }
+
+
 }
