@@ -1,7 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FooterComponent} from "../footer/footer.component";
 import {MenuComponent} from "../menu/menu.component";
 import {TopBarComponent} from "../top-bar/top-bar.component";
+import {AuthService} from '../auth.service';
+import {AuthServiceService} from '../services/auth-service.service';
+import {User} from '../Model/User';
+
 
 @Component({
   selector: 'app-users',
@@ -14,6 +18,19 @@ import {TopBarComponent} from "../top-bar/top-bar.component";
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })
-export class UsersComponent {
+export class UsersComponent implements OnInit{
+  users: User[] = [];
 
+  constructor(private userService: AuthServiceService) {}
+
+  ngOnInit(): void {
+    this.loadUsers();
+  }
+
+  loadUsers(): void {
+    this.userService.getUsers().subscribe((data: User[]) => {
+      this.users = data;
+      console.log("data", data);
+    });
+  }
 }

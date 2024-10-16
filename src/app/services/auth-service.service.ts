@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
+import {User} from '../Model/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthServiceService {
   private apiUrl = 'http://localhost:8088/test/auth';
+  private apiUser='http://localhost:8088/test/api/users'
   private tokenKey = 'authToken';
   constructor(private http: HttpClient, private  router:Router) {}
 
@@ -51,6 +53,11 @@ export class AuthServiceService {
     return this.http.get(`${this.apiUrl}/me`, { headers });
   }
 
+///crud users
 
+  // Get all users
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUser);
+  }
 
 }
