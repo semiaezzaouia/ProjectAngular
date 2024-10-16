@@ -7,7 +7,13 @@
 }
 
 .custom-disconnect-btn:hover {
-  background-color: #596AFF; /* Couleur de fond au survol */
-  color: white; /* Couleur du texte au survol */
+  background-color: #CCD1FF; /* Couleur de fond au survol */
+  color: black; /* Couleur du texte au survol */
 }
+
+.custom-disconnect-btn:active {
+  background-color: #596AFF; /* Couleur de fond quand le bouton est cliqué */
+  color: white; /* Couleur du texte */
+}
+
 

@@ -1,0 +1,43 @@
+.custom-addUser-btn {
+  background-color:   #FFCCF1; /* Couleur de fond personnalisée */
+  color: black; /* Couleur du texte */
+  border: none; /* Supprime la bordure par défaut */
+  font-size: 18px; /* Agrandit le texte du bouton */
+  padding: 10px 24px;
+  width: 200px;
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.custom-addUser-btn:hover {
+  background-color: #FFB3EA; /* Couleur de fond au survol */
+  color: black; /* Couleur du texte au survol */
+}
+
+.custom-addUser-btn:active {
+  background-color: #FF59D1; /* Couleur de fond quand le bouton est cliqué */
+  color: white; /* Couleur du texte */
+}
+
+.custom-edit-delete-btn {
+  background-color:   #FFCCF1; /* Couleur de fond personnalisée */
+  color: black; /* Couleur du texte */
+  border: none; /* Supprime la bordure par défaut */
+  font-size: 18px; /* Agrandit le texte du bouton */
+  padding: 10px 24px;
+  width: 100px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.custom-edit-delete-btn:hover {
+  background-color: #FFB3EA; /* Couleur de fond au survol */
+  color: black; /* Couleur du texte au survol */
+}
+
+.custom-edit-delete-btn:active {
+  background-color: #FF59D1; /* Couleur de fond quand le bouton est cliqué */
+  color: white; /* Couleur du texte */
+}

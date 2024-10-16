@@ -33,6 +33,7 @@
                   <th>Role</th>
                   <th>Created at</th>
                   <th>Updated at</th>
+                  <th>Actions</th>
                 </tr>
                 </thead>
                 <tfoot>
@@ -43,6 +44,7 @@
                   <th>Role</th>
                   <th>Created at</th>
                   <th>Updated at</th>
+                  <th>Actions</th>
                 </tr>
                 </tfoot>
                 <tbody>
@@ -53,11 +55,16 @@
                   <td>61</td>
                   <td>2011/04/25</td>
                   <td>$320,800</td>
+                  <td>
+                      <button class="btn custom-edit-delete-btn btn-sm mb-2" [routerLink]="['/']">Edit</button>
+                      <button class="btn custom-edit-delete-btn btn-sm" [routerLink]="['/']">Delete</button>
+                  </td>
                 </tr>
                 </tbody>
               </table>
             </div>
           </div>
+          <button class="btn custom-addUser-btn btn-sm ml-3 mr-3" [routerLink]="['/register']">Add a New User</button>
         </div>
       </div>
       <!-- /.container-fluid -->

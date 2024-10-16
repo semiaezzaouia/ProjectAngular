@@ -5,16 +5,18 @@ import {TopBarComponent} from "../top-bar/top-bar.component";
 import {AuthService} from '../auth.service';
 import {AuthServiceService} from '../services/auth-service.service';
 import {User} from '../Model/User';
+import {RouterLink} from '@angular/router';
 
 
 @Component({
   selector: 'app-users',
   standalone: true,
-    imports: [
-        FooterComponent,
-        MenuComponent,
-        TopBarComponent
-    ],
+  imports: [
+    FooterComponent,
+    MenuComponent,
+    TopBarComponent,
+    RouterLink
+  ],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })
