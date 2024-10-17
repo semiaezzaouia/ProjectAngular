@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Router, RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthServiceService} from '../services/auth-service.service';
+import {considerSettingUpAutocompletion} from '@angular/cli/src/utilities/completion';
 
 @Component({
   selector: 'app-login',
@@ -19,11 +20,13 @@ export class LoginComponent {
   login() {
     const credentials = { email: this.email, password: this.password };
     this.authService.login(credentials).subscribe(
+
       (response) => {
         this.authService.saveToken(response.token);  // Sauvegarder le token
         this.router.navigate(['/generaldashboard']);  // Rediriger vers la page 1
       },
       (error) => {
+        console.log("login:",credentials)
         console.error('Erreur de connexion', error);
         alert('Erreur de connexion : ' + error.message || 'Veuillez vérifier vos identifiants.');
       }

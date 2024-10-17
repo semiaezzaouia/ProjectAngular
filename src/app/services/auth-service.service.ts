@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {catchError, Observable, throwError} from 'rxjs';
 import {Router} from '@angular/router';
 import {User} from '../Model/User';
 
@@ -9,7 +9,7 @@ import {User} from '../Model/User';
 })
 export class AuthServiceService {
   private apiUrl = 'http://localhost:8088/test/auth';
-  private apiUser='http://localhost:8088/test/api/users'
+
   private tokenKey = 'authToken';
   constructor(private http: HttpClient, private  router:Router) {}
 
@@ -18,11 +18,14 @@ export class AuthServiceService {
     console.log("data",data)
     return this.http.post(`${this.apiUrl}/signup`, data);
   }
-
-  // Méthode pour se connecter
-  login(credentials: { email: string, password: string }): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, credentials);
+  login(data: { email: string; password: string }): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(`${this.apiUrl}/login`, data, { headers });
   }
+  // Méthode pour se connecter
+  // login(credentials: { email: string, password: string }): Observable<any> {
+  //   return this.http.post(`${this.apiUrl}/login`, credentials);
+  // }
 
   // Sauvegarder le token JWT dans le localStorage
   saveToken(token: string): void {
@@ -44,20 +47,40 @@ export class AuthServiceService {
 
 
 // Method to get authenticated user
+//   getAuthenticatedUser(): Observable<any> {
+//     const token = localStorage.getItem('authToken'); // Retrieve the JWT token from local storage
+//     const headers = new HttpHeaders({
+//       'Authorization': `Bearer ${token}` // Include the JWT token in the Authorization header
+//     });
+//
+//     return this.http.get(`${this.apiUrl}/me`, { headers });
+//   }
+
+
+
+  // Method to get authenticated user
   getAuthenticatedUser(): Observable<any> {
     const token = localStorage.getItem('authToken'); // Retrieve the JWT token from local storage
+
+    if (!token) {
+      console.error("No token found!"); // Ensure the token exists
+      return throwError("No token found!"); // Return an observable error
+    }
+
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}` // Include the JWT token in the Authorization header
     });
 
-    return this.http.get(`${this.apiUrl}/me`, { headers });
+    return this.http.get(`${this.apiUrl}/me`, { headers }).pipe(
+      catchError(err => {
+        console.error('Error occurred while fetching user data:', err);
+        return throwError(err);
+      })
+    );
   }
 
-///crud users
 
-  // Get all users
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUser);
-  }
+
+
 
 }
