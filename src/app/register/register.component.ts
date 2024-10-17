@@ -35,5 +35,8 @@ export class RegisterComponent {
       }
     );
   }
+  exit() {
+    this.router.navigate(['/users']); // Rediriger vers la liste des utilisateurs
+  }
 
 }

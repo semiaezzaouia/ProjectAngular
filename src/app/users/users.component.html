@@ -52,8 +52,10 @@
               </table>
             </div>
           </div>
-          <button class="btn custom-addUser-btn btn-sm ml-3 mr-3" [routerLink]="['/register']">Add a New User</button>
+          <button class="btn custom-addUser-btn btn-sm ml-3 mr-3" [routerLink]="['register']">Add a New User</button>
         </div>
+        <router-outlet></router-outlet>
+
       </div>
 
       <!-- ####################################### End of Main Content ################################################### -->

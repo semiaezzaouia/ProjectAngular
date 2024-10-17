@@ -1,26 +1,13 @@
-<body>
-<!-- Page Wrapper -->
-<div id="wrapper" class="d-flex">
-  <!-- Sidebar -->
-  <app-menu></app-menu>
-  <!-- End of Sidebar -->
-
-  <!-- Content Wrapper -->
-  <div id="content-wrapper" class="d-flex flex-column flex-grow-1">
-    <!-- Main Content -->
-    <div id="content">
-      <!-- Topbar -->
-      <app-top-bar></app-top-bar>
-      <!-- End of Topbar -->
 
       <!-- Begin Page Content -->
-      <div class="container-fluid">
+      <div class="container-fluid modal">
         <div class="container">
           <!-- Outer Row -->
           <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
               <div class="card o-hidden border-0 shadow-lg my-5" >
                 <div class="card-body p-0">
+                  <button type="button" class="custom-exit-btn" (click)="exit()">Exit</button>
                   <div class="row">
                     <div class="col-lg-6">
                       <!-- Espace pour l'image -->
@@ -79,14 +66,4 @@
 
       </div>
       <!-- End of Page Content -->
-    </div>
-    <!-- End of Main Content -->
 
-    <!-- Footer -->
-    <app-footer></app-footer>
-    <!-- End of Footer -->
-  </div>
-  <!-- End of Content Wrapper -->
-</div>
-<!-- End of Page Wrapper -->
-</body>

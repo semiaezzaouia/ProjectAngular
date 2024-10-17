@@ -5,9 +5,10 @@ import {TopBarComponent} from "../top-bar/top-bar.component";
 import {AuthService} from '../auth.service';
 import {AuthServiceService} from '../services/auth-service.service';
 import {User} from '../Model/User';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink, RouterOutlet} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import { UserService } from '../services/userService';
+import {RegisterComponent} from '../register/register.component';
 
 @Component({
   selector: 'app-users',
@@ -17,7 +18,9 @@ import { UserService } from '../services/userService';
     FooterComponent,
     MenuComponent,
     TopBarComponent,
-    RouterLink
+    RouterLink,
+    RouterOutlet,
+    RegisterComponent
   ],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
@@ -26,8 +29,7 @@ import { UserService } from '../services/userService';
 export class UsersComponent implements OnInit {
   usersData: any[] = [];
 
-  constructor(private userService: UserService) {
-  }
+  constructor(private userService: UserService, private router: Router) {}
 
 
   ngOnInit(): void {
@@ -39,6 +41,11 @@ export class UsersComponent implements OnInit {
       error => console.error('Error fetching users:', error)
     );
   }
+
+  exit() {
+    this.router.navigate(['/users']); // Rediriger vers la liste des utilisateurs
+  }
+
 }
 
 

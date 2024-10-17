@@ -30,6 +30,37 @@
   color: white; /* Couleur du texte */
 }
 
+.modal {
+  position: fixed; /* Position fixe pour superposition */
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  z-index: 1000; /* Assure que la modal est au-dessus des autres éléments */
+}
+
+.custom-exit-btn {
+  background-color: #FF90E0; /* Couleur de fond rouge */
+  color: white; /* Couleur du texte */
+  border: none; /* Pas de bordure */
+  padding: 10px 20px; /* Espacement interne */
+  cursor: pointer; /* Curseur pointer */
+  transition: background-color 0.3s; /* Transition pour l'effet de survol */
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.custom-exit-btn:hover {
+  background-color: #FF59D1; /* Couleur de fond lors du survol */
+}
+
+.custom-disconnect-btn:active {
+  background-color: #B53F94; /* Couleur de fond quand le bouton est cliqué */
+  color: white; /* Couleur du texte */
+}
+
+
 
 
 
