@@ -9,24 +9,25 @@ import {GeneralDashboardComponent} from './general-dashboard/general-dashboard.c
 import {FiltredDashboardComponent} from './filtred-dashboard/filtred-dashboard.component';
 import {UsersComponent} from './users/users.component';
 import { RegisterComponent } from './register/register.component';
+import {AuthGuard} from './services/auth.guard';
 
 
 export const routes: Routes = [
-  { path: 'home2', component: Home2Component },
-  { path: 'home', component: HomeComponent},
-  { path: 'topbar', component: TopBarComponent},
-  { path: 'menu', component: MenuComponent},
-  { path: 'generaldashboard', component: GeneralDashboardComponent},
-  { path: 'filtreddashboard', component: FiltredDashboardComponent},
+  { path: 'home2', component: Home2Component, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  { path: 'topbar', component: TopBarComponent, canActivate: [AuthGuard]},
+  { path: 'menu', component: MenuComponent, canActivate: [AuthGuard]},
+  { path: 'generaldashboard', component: GeneralDashboardComponent, canActivate: [AuthGuard]},
+  { path: 'filtreddashboard', component: FiltredDashboardComponent, canActivate: [AuthGuard]},
   {
     path: 'users',
-    component: UsersComponent,
+    component: UsersComponent, canActivate: [AuthGuard],
     children: [
       { path: 'register', component: RegisterComponent }  // Sous-route pour l'ajout d'utilisateur
     ]
   },
   { path: 'login', component: LoginComponent }, // Assurez-vous que le composant de connexion est également défini
-  { path: 'forgot', component: ForgotPasswordComponent },
+  //{ path: 'forgot', component: ForgotPasswordComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },  // Redirige vers login par défaut
   { path: '**', redirectTo: 'login' },  // Gestion des routes inconnues
 

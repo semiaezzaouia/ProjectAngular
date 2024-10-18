@@ -2,26 +2,30 @@
 .custom-gradient-bg {
   background: linear-gradient(135deg, #CCD1FF, #B0C4FF, #E6E8FF);
 }
-.custom-bg {
-  background-color: #596AFF;
-}
-
-.image-spacing {
-  margin-top: 40px;
-}
-
 .custom-bg-button {
   background-color: #DBDFFF; /* Couleur de fond personnalisée */
   color: black; /* Couleur du texte */
   border: none; /* Supprime la bordure par défaut */
   font-size: 18px; /* Agrandit le texte du bouton */
   padding: 10px 24px;
-  width: 330px;
+  width: 400px;
   border-radius: 50px;
+  margin-top: 20px;
 }
 
 .custom-bg-button:hover {
   background-color: #CCD1FF; /* Couleur de fond au survol */
   color: black; /* Couleur du texte au survol */
 }
+
+.custom-bg-button:active {
+  background-color: #596AFF; /* Couleur de fond quand le bouton est cliqué */
+  color: white; /* Couleur du texte */
+}
+
+.image-spacing {
+  margin-top: 40px;
+}
+
+
 
