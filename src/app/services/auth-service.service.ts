@@ -14,10 +14,12 @@ export class AuthServiceService {
   constructor(private http: HttpClient, private  router:Router) {}
 
   // Méthode pour s'inscrire
-  signup(data: { email: string, password: string, fullName: string }): Observable<any> {
+  signup(data: { email: string, password: string, firstName: string, lastName: string }): Observable<any> {
     console.log("data",data)
     return this.http.post(`${this.apiUrl}/signup`, data);
   }
+
+
   login(data: { email: string; password: string }): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(`${this.apiUrl}/login`, data, { headers });

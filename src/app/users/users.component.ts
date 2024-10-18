@@ -46,6 +46,17 @@ export class UsersComponent implements OnInit {
     this.router.navigate(['/users']); // Rediriger vers la liste des utilisateurs
   }
 
+  deleteUser(userId: number): void {
+    this.userService.deleteUser(userId).subscribe({
+      next: () => {
+        console.log('Utilisateur supprimé avec succès');
+        this.usersData = this.usersData.filter(user => user.id !== userId); // Met à jour la liste localement
+      },
+      error: (err) => {
+        console.error('Erreur lors de la suppression de l\'utilisateur', err);
+      }
+    });
+  }
 }
 
 

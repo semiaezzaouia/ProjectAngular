@@ -45,7 +45,9 @@
                   <td>{{user.updatedAt | date: 'short'}}</td>
                   <td>
                     <button class="btn custom-edit-btn btn-sm mb-2" [routerLink]="['/']">Edit</button>
-                    <button class="btn custom-delete-btn btn-sm" [routerLink]="['/']">Delete</button>
+
+                    <p>{{ user.name }} <button class="btn custom-delete-btn btn-sm" (click)="deleteUser(user.id)">Delete</button></p>
+
                   </td>
                 </tr>
                 </tbody>
