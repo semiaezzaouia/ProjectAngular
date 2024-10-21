@@ -10,6 +10,7 @@ import {FiltredDashboardComponent} from './filtred-dashboard/filtred-dashboard.c
 import {UsersComponent} from './users/users.component';
 import { RegisterComponent } from './register/register.component';
 import {AuthGuard} from './services/auth.guard';
+import {EditUserComponent} from './edit-user/edit-user.component';
 
 
 export const routes: Routes = [
@@ -21,9 +22,11 @@ export const routes: Routes = [
   { path: 'filtreddashboard', component: FiltredDashboardComponent, canActivate: [AuthGuard]},
   {
     path: 'users',
-    component: UsersComponent, canActivate: [AuthGuard],
+    component: UsersComponent,
+    canActivate: [AuthGuard],
     children: [
-      { path: 'register', component: RegisterComponent }  // Sous-route pour l'ajout d'utilisateur
+      { path: 'register', component: RegisterComponent },
+      { path: 'edit/:id', component: EditUserComponent}
     ]
   },
   { path: 'login', component: LoginComponent }, // Assurez-vous que le composant de connexion est également défini

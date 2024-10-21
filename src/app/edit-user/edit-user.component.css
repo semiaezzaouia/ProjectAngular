@@ -1,35 +1,3 @@
-
-.custom-bg {
-  background-color: #596AFF;
-}
-
-.image-spacing {
-  margin-top: 55px;
-  margin-left: 25px;
-}
-
-.custom-bg-button {
-  background-color: #DBDFFF; /* Couleur de fond personnalisée */
-  color: black; /* Couleur du texte */
-  border: none; /* Supprime la bordure par défaut */
-  font-size: 18px; /* Agrandit le texte du bouton */
-  padding: 10px 24px;
-  width: 420px;
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
-}
-
-.custom-bg-button:hover {
-  background-color: #CCD1FF; /* Couleur de fond au survol */
-  color: black; /* Couleur du texte au survol */
-}
-
-.custom-bg-button:active {
-  background-color: #596AFF; /* Couleur de fond quand le bouton est cliqué */
-  color: white; /* Couleur du texte */
-}
-
 .modal {
   position: fixed; /* Position fixe pour superposition */
   inset: 0;
@@ -61,6 +29,33 @@
 }
 
 
+.custom-bg {
+  background-color: #596AFF;
+}
 
+.image-spacing {
+  margin-top: 55px;
+  margin-left: 25px;
+}
 
+.custom-bg-button {
+  background-color: #DBDFFF; /* Couleur de fond personnalisée */
+  color: black; /* Couleur du texte */
+  border: none; /* Supprime la bordure par défaut */
+  font-size: 18px; /* Agrandit le texte du bouton */
+  padding: 10px 24px;
+  width: 420px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+}
 
+.custom-bg-button:hover {
+  background-color: #CCD1FF; /* Couleur de fond au survol */
+  color: black; /* Couleur du texte au survol */
+}
+
+.custom-bg-button:active {
+  background-color: #596AFF; /* Couleur de fond quand le bouton est cliqué */
+  color: white; /* Couleur du texte */
+}

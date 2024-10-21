@@ -9,6 +9,7 @@ import {Router, RouterLink, RouterOutlet} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import { UserService } from '../services/userService';
 import {RegisterComponent} from '../register/register.component';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-users',
@@ -29,7 +30,7 @@ import {RegisterComponent} from '../register/register.component';
 export class UsersComponent implements OnInit {
   usersData: any[] = [];
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router, private changeDetector: ChangeDetectorRef) {}
 
 
   ngOnInit(): void {
@@ -51,12 +52,20 @@ export class UsersComponent implements OnInit {
       next: () => {
         console.log('Utilisateur supprimé avec succès');
         this.usersData = this.usersData.filter(user => user.id !== userId); // Met à jour la liste localement
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/users']);
+        });
       },
       error: (err) => {
         console.error('Erreur lors de la suppression de l\'utilisateur', err);
       }
     });
   }
+
+  editUser(userId: number): void {
+    this.router.navigate(['/users/edit', userId]); // Navigue vers le composant d'édition avec l'ID de l'utilisateur
+  }
+
 }
 
 

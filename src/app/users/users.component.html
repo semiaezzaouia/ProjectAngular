@@ -44,10 +44,10 @@
                   <td>{{user.createdAt | date: 'short'}}</td>
                   <td>{{user.updatedAt | date: 'short'}}</td>
                   <td>
-                    <button class="btn custom-edit-btn btn-sm mb-2" [routerLink]="['/']">Edit</button>
+                    <button class="btn custom-edit-btn btn-sm mb-2" (click)="editUser(user.id)">Edit</button>
+                      <router-outlet></router-outlet>
 
-                    <p>{{ user.name }} <button class="btn custom-delete-btn btn-sm" (click)="deleteUser(user.id)">Delete</button></p>
-
+                    {{ user.name }} <button class="btn custom-delete-btn btn-sm" (click)="deleteUser(user.id)">Delete</button>
                   </td>
                 </tr>
                 </tbody>
@@ -55,8 +55,9 @@
             </div>
           </div>
           <button class="btn custom-addUser-btn btn-sm ml-3 mr-3" [routerLink]="['register']">Add a New User</button>
+          <router-outlet></router-outlet>
         </div>
-        <router-outlet></router-outlet>
+
 
       </div>
 
